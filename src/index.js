@@ -4,14 +4,18 @@ import ReactDom from 'react-dom'
 
 //2.创建虚拟dom元素
 
-// const myh1=react.createElement('h1',{id:'myh1',title:'this is a h1'},'这是一个h1元素')
-// const mydiv=react.createElement('div',null,'哈哈',myh1)
+import Movie from "@/07.class创建组件"
+const dog={
+  name: 'xiaobai',
+  age: 2,
+  gender: '公'
+}
 
-const mydiv= <div>
-  哈哈
-  <p id='myh1' title='this is a h1'>这是一个h1元素</p>
-</div>
+
+import '@/06.class继承.js'
 
 //3.使用react-dom 把虚拟dom渲染到页面上
 
-ReactDom.render(mydiv,document.querySelector('#app'))
+ReactDom.render(<div>
+  <Movie {...dog}></Movie>
+</div>,document.querySelector('#app'))
