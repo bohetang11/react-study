@@ -4,18 +4,27 @@ import ReactDom from 'react-dom'
 
 //2.创建虚拟dom元素
 
-import Movie from "@/07.class创建组件"
-const dog={
-  name: 'xiaobai',
-  age: 2,
-  gender: '公'
-}
+// import Movie from "@/07.class创建组件"
+// const dog={
+//   name: 'xiaobai',
+//   age: 2,
+//   gender: '公'
+// }
 
 
-import '@/06.class继承.js'
+import Cmtlist from '@/components/cmtList.jsx'
+import Btn from '@/components/click.jsx'
+
+
+
+
+
+// import '@/06.class继承.js'
 
 //3.使用react-dom 把虚拟dom渲染到页面上
 
-ReactDom.render(<div>
-  <Movie {...dog}></Movie>
+ReactDom.render( < div > 
+{ /* <Movie {...dog}></Movie> */ } 
+<Cmtlist> < /Cmtlist> 
+<Btn></Btn>
 </div>,document.querySelector('#app'))
