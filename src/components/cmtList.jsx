@@ -5,7 +5,8 @@ import Cmtitem from '@/components/cmtItem.jsx'
 import style from '@/components/style'
 
 import cssobj from '@/css/cmt.css'
-console.log(cssobj)
+// console.log(cssobj)
+import Submit from '@/components/cmtChild'
 
 export default class Cmtlist extends React.Component {
     constructor() {
@@ -42,7 +43,19 @@ export default class Cmtlist extends React.Component {
     render() {
       return <div >
         <h1 className={[cssobj.title, 'test'].join(' ')}> 这是评论列表组件 < /h1>
+        <Submit func={this.postNew}></Submit>
         {this.state.CommentList.map(item=><Cmtitem {...item} key={item.id}></Cmtitem>)}
       </div>
+    }
+
+    postNew=(cmtobj)=>{
+      // console.log('父组件的方法')
+      // console.log(cmtobj)
+      const arr=this.state.CommentList
+      arr.unshift(cmtobj)
+      this.setState({
+        CommentList: arr 
+      })
+     
     }
   }
