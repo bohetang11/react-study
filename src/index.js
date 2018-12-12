@@ -2,6 +2,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+
+
 //2.创建虚拟dom元素
 
 import Movie from "@/07.class创建组件"
@@ -14,6 +16,7 @@ const dog={
 import Cmtlist from '@/components/cmtList.jsx'
 import Btn from '@/components/click.jsx'
 import Child from '@/08.生命周期函数.js'
+import Get from '@/components/get'
 
 class Parents extends React.Component{
   constructor(){
@@ -24,6 +27,7 @@ class Parents extends React.Component{
   }
   render(){
     return <div>
+      <Get></Get>
       <button onClick={()=>this.add()}>点击加1</button>
       <h1>{this.state.c}</h1>
       <hr/>
@@ -34,6 +38,7 @@ class Parents extends React.Component{
   add(){
     this.setState({c:this.state.c+1})
   }
+  
 }
 
 
