@@ -13,8 +13,8 @@ export default class Child extends React.Component{
             <h1>{this.state.count}</h1>
         </div>
     }
-    componentWillReceiveProps(nextProps,nextState){
-        console.log(nextProps.c,nextState)
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps.c)
         this.setState({count:nextProps.c})
     }
 }
